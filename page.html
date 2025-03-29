@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <title>Calculation Tools</title>
+    <link rel="stylesheet" href="./page.css">
+    <script src="./page.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculation Tools</h1>
+
+        <div class="calculator f1">
+            <div class="header-group">
+                <h2>Fee Calculation</h2>
+                <button class="btn" onclick="reset()">Reset</button>
+            </div>
+            <input type="number" id="fee" placeholder="Fee" min="0" title="Non-Negative Number"/>
+            <input type="number" id="count" placeholder="Count" min="0" title="Non-Negative Number"/>
+            <input type="number" id="discount" placeholder="Discount (%)" min="0" max="100" title="Between 0 and 100"/>
+            <p class="output">Total: 0</p>
+            <formula evaluator="count*fee*(100-discount)/100" />
+        </div>
+
+        <div class="calculator f2">
+            <div class="header-group">
+                <h2>Circle Area Calculation</h2>
+                <button class="btn" onclick="reset()">Reset</button>
+            </div>
+            <input type="number" id="radius" placeholder="Radius" min="0" title="Non-Negative Number"/>
+            <input type="number" id="diameter" placeholder="Diameter" min="0" title="Non-Negative Number"/>
+            <p class="output">Area: 0</p>
+            <formula evaluator="pi*radius*radius" />
+        </div>
+
+        <div class="calculator f3">
+            <div class="header-group">
+                <h2>Force Calculation</h2>
+                <button class="btn" onclick="reset()">Reset</button>
+            </div>
+            <input type="number" id="mass" placeholder="Mass (kg)" min="0" title="Non-Negative Number"/>
+            <input type="number" id="acceleration" placeholder="Acceleration (m/s²)" min="0" title="Non-Negative Number"/>
+            <input type="number" id="theta" placeholder="Theta (degrees)" min="0" max="360" title="In degrees"/>
+            <p class="output">Force (N): 0</p>
+            <formula evaluator="m*a" />
+        </div>
+    </div>
+</body>
+</html>
